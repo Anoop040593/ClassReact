@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+  </head>
+  <body>
+    <div id="root">
+      <!-- All of react goes here-->
+    </div>
+
+    <script>
+      //   const headingElement = document.createElement("h1");
+      //   headingElement.innerHTML = "Hello from JS";
+
+      const rootElement = document.getElementById("root");
+      //   //   console.log(root);
+      //   root.append(headingElement);
+
+      //Get the root element where the react application needs to be loaded/mounted
+      // Create an element using React.createElement
+      /*
+      1. Tag name of the HTML ELement to create
+      2. The properties of the element. Adding null here for now, props later!
+      3. The children of the element
+      */
+
+      const headingElement = React.createElement(
+        "h1",
+        { style: { color: "blue" } },
+        "Hello from React",
+      );
+
+      //   console.log(headingElement);
+
+      //Render the Element to DOM using React DOM
+      //Takes 2 arguments
+      // 1. The react element to render
+      // 2. The DOM element when the React Element should be mounted.
+
+      ReactDOM.render(headingElement, rootElement);
+    </script>
+  </body>
+</html>
