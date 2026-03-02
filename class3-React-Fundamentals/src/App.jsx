@@ -5,6 +5,7 @@ import passportPhoto from "./assets/8-PassportSizePhoto.jpg";
 import Counter from "./component/Counter";
 import UserCard from "./component/UserCard";
 import ProductList from "./component/ProductList";
+import Todo from "./component/Todo";
 
 function App() {
   // const [name, setName] = useState("Anoop");
@@ -45,6 +46,9 @@ function App() {
       <hr />
       <h2>Product List</h2>
       <ProductList products={ProductsList} />
+
+      <hr />
+      <Todo />
     </>
   );
 }
