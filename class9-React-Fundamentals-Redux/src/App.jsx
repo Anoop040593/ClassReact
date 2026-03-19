@@ -6,8 +6,8 @@ import CounterRedux from "./reduxComponents/CounterRedux";
 import ToDoRedux from "./reduxComponents/ToDoRedux";
 
 function App() {
-  // return <CounterRedux></CounterRedux>;
-  return <ToDoRedux></ToDoRedux>;
+  return <CounterRedux></CounterRedux>;
+  // return <ToDoRedux></ToDoRedux>;
 }
 
 export default App;
