@@ -5,7 +5,12 @@ import MovieCard from "./MovieCard";
 import storage from "../utils/storage";
 import { WATCHLIST_LS_KEY, defaultWatchList } from "../constants";
 import { MovieContext } from "../Context/MovieContext";
+import { useSelector, useDispatch } from "react-redux";
+import paginationSlice from "../redux/paginationSlice";
+
+const actions = paginationSlice.actions;
 function Movies() {
+  const dispatch = useDispatch();
   const [movies, setMovies] = useState([
     { url: "https://wallpaperaccess.com/full/1373551.jpg", title: "Movie 1" },
     { url: "https://wallpaperaccess.com/full/1373551.jpg", title: "Movie 2" },
@@ -18,15 +23,20 @@ function Movies() {
   // );
   const { watchList, addToWatchList, removeFromWatchList, setWatchList } =
     useContext(MovieContext);
-  const [pageNo, setPageNo] = useState(1);
+  const pageNo = useSelector((store) => store.paginationState.page);
+  // const [pageNo, setPageNo] = useState(1);
+
   const handlePrev = () => {
-    if (pageNo === 1) {
-      setPageNo(pageNo);
-    } else setPageNo(pageNo - 1);
+    if (pageNo !== 1) {
+      // setPageNo(pageNo);
+      dispatch(actions.prev());
+    }
+    // } else setPageNo(pageNo - 1);
   };
 
   const handleNext = () => {
-    setPageNo(pageNo + 1);
+    // setPageNo(pageNo + 1);
+    dispatch(actions.next());
   };
 
   // const addToWatchList = (movieObj) => {

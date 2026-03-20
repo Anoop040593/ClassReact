@@ -4,10 +4,11 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import CounterRedux from "./reduxComponents/CounterRedux";
 import ToDoRedux from "./reduxComponents/ToDoRedux";
-
+import User from "./reduxComponents/UserRedux";
 function App() {
-  return <CounterRedux></CounterRedux>;
+  // return <CounterRedux></CounterRedux>;
   // return <ToDoRedux></ToDoRedux>;
+  return <User></User>;
 }
 
 export default App;
